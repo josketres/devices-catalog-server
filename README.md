@@ -1,7 +1,7 @@
 # Devices Catalog Server
 
 ## Install & run
-    git clone http://github.com/josketres/devices-catalog-server
+    git clone https://github.com/josketres/devices-catalog-server.git
     cd devices-catalog-server
     sudo npm install
     node app.js
