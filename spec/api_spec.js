@@ -20,6 +20,7 @@ frisby.create('Register device with id x001')
     id : 'x001',
     status : 'available'
   })
+  .inspectJSON()
 .toss();
 
 frisby.create('Register device with id x001 again should result in an error')
@@ -39,6 +40,7 @@ frisby.create('Query device with id x001')
     id : 'x001',
     status : 'available'
   })
+  .inspectJSON()
 .toss();
 
 frisby.create('Query device with unregistered id should result in a 404-NotFound')
@@ -58,6 +60,7 @@ frisby.create('Query list of registered devices')
       status : 'available'
     }
   })
+  .inspectJSON()
 .toss();
 
 frisby.create('Borrow device x001 to Josue')
@@ -110,6 +113,7 @@ frisby.create('Return device x001 (make it available)')
     id : 'x001',
     status : 'available',
   })
+  .inspectJSON()
 .toss();
 
 frisby.create('Return unregistered device should result in a 404-NotFound')
