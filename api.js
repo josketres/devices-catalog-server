@@ -63,5 +63,6 @@ exports.returnDevice = function(req, res) {
 
 exports.devices = function(req, res) {
   res.header("Cache-Control", "no-cache");
+  res.header("Access-Control-Allow-Origin", "*");
   res.json(db);
 };
