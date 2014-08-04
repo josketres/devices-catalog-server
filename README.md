@@ -3,7 +3,7 @@
 ## Install & run
     git clone https://github.com/josketres/devices-catalog-server.git
     cd devices-catalog-server
-    sudo npm install
+    npm install
     node app.js
 
 ## API
@@ -28,4 +28,4 @@ DELETE /api/device/:id/borrower
 Specs are created using frisby, which requires jasmine-node for the tests to be run.
     
     sudo npm install -g jasmine-node
-    jasmine-node specs/
+    jasmine-node spec/
