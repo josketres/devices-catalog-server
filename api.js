@@ -1,5 +1,11 @@
+var fs = require('fs');
+
 // initialize our in-memory database
 var db = {};
+if (fs.existsSync("./backup.js")) {
+  console.info('Filling db with backup.js');
+  db = require('./backup.js').data;
+}
 
 exports.query = function(req, res) {
   var id = req.params.id,
@@ -16,9 +22,9 @@ exports.query = function(req, res) {
 exports.register = function(req, res) {
   var device = req.body;
 
-  if(!device.id) {
+  if (!device.id) {
     res.status(400).send("Can't register a device without 'id'");
-  } else if(db[device.id]) {
+  } else if (db[device.id]) {
     res.status(500).send("Device is already registered");
   } else {
     device.borrower = undefined;
@@ -33,10 +39,10 @@ exports.borrowDevice = function(req, res) {
     device = db[id],
     borrower = req.body;
 
-  if(!device) {
+  if (!device) {
     console.log("No device found for id:" + id);
     res.status(404).send('Not found');
-  } else if(!borrower['name']) {
+  } else if (!borrower['name']) {
     res.status(400).send("Can't borrow to a borrower without 'name'");
   } else {
     device.borrower = borrower;
@@ -50,7 +56,7 @@ exports.returnDevice = function(req, res) {
   var id = req.params.id,
     device = db[id];
 
-  if(!device) {
+  if (!device) {
     console.log("No device found for id:" + id);
     res.status(404).send('Not found');
   } else {
@@ -58,7 +64,7 @@ exports.returnDevice = function(req, res) {
     device.borrowedSince = undefined;
     device.status = 'available';
     res.json(device);
-  } 
+  }
 };
 
 exports.devices = function(req, res) {
