@@ -22,8 +22,10 @@ swagger.addModels(models)
 	.addGet(resources.query)
 	.addPost(resources.register);
 
-//app.get('/api/device/:id', api.query);
-//app.post('/api/device', api.register);
+app.get('/', function(req, res) {
+	res.redirect('/swagger-ui/index.html');
+});
+
 //app.get('/api/devices', api.devices);
 //app.post('/api/device/:id/borrower', api.borrowDevice);
 //app.delete('/api/device/:id/borrower', api.returnDevice);
