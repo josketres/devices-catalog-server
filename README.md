@@ -28,4 +28,4 @@ DELETE /api/device/:id/borrower
 Specs are created using frisby, which requires jasmine-node for the tests to be run.
     
     sudo npm install -g jasmine-node
-    jasmine-node spec/
+    npm test

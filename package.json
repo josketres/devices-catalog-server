@@ -4,11 +4,15 @@
   "private": true,
   "dependencies": {
     "body-parser": "1.5.2",
-    "express": "4.7.2",
+    "express": "4.8.7",
     "frisby": "0.8.1",
     "morgan": "1.2.2",
     "node-getopt": "^0.2.3",
     "swagger-node-express": "^2.1.0"
   },
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "scripts": {
+    "test": "node spec/run-tests.js",
+    "start": "node app.js"
+  }
 }
