@@ -25,7 +25,7 @@ swagger.addModels(models)
 	.addDelete(resources.returnDevice);
 
 app.get('/', function(req, res) {
-	res.redirect('/swagger-ui/index.html');
+	res.redirect('/swagger-ui/index.html#!/api');
 });
 
 swagger.configureSwaggerPaths("", "api-docs", "");
