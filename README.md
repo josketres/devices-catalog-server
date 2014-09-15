@@ -4,7 +4,11 @@
     git clone https://github.com/josketres/devices-catalog-server.git
     cd devices-catalog-server
     npm install
-    node app.js
+    node app.js -n `hostname`
+
+## More information
+    
+    node app.js --help
 
 ## API
 See the specs under `spec/` for examples of the API calls.

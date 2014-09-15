@@ -29,7 +29,7 @@ app.get('/', function(req, res) {
 });
 
 swagger.configureSwaggerPaths("", "api-docs", "");
-swagger.configure("http://localhost:" + options.port, "0.1");
+swagger.configure("http://" + options.hostName + ":" + options.port, "0.1");
 
 app.use(function(err, req, res, next) {
 	res.status(err.code).send(err.message);
